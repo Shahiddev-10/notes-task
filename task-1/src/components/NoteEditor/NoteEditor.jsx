@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNote, clearCurrentNote, deleteNote, updateNote } from "../../features/reducer/notes";
+import "./NoteEditor.css"
 
 const NoteEditor = () => {
     const dispatch = useDispatch()
@@ -27,8 +28,10 @@ const NoteEditor = () => {
         dispatch(updateNote({ id: note.id, ...note }))
     }
     const addHandler = () => {
-        dispatch(addNote({ title: note.title, body: note.body }))
-        setNote({ title: "", body: "" })
+        if (note.title && note.body) {
+            dispatch(addNote({ title: note.title, body: note.body }))
+            setNote({ title: "", body: "" })
+        }
     }
     const deleteHandler = () => {
         setEdit(false)
@@ -47,39 +50,37 @@ const NoteEditor = () => {
         setNote({ ...note, [e.target.name]: e.target.value })
     }
 
-    return <div className="note-form">
-        {note.id && isDisabled && <button className="button" type="button" onClick={addNewHandler}>Add New</button>}
+    return <div>
+        <div className="note-form">
 
-        <label className="note-label">Title</label>
-        <br />
-        <input
-            placeholder="Enter title"
-            value={note.title}
-            disabled={isDisabled}
-            required
-            name="title"
-            onChange={changeHandler}
-            className="input-text"
-        />
-        <br />
-        <br />
-        <label className="note-label">body</label>
-        <br />
-        <textarea
-            placeholder="Enter body"
-            value={note.body}
-            disabled={isDisabled}
-            name="body"
-            required
-            onChange={changeHandler}
-            className="input-area"
-        />
-        <br />
-        {!note.id && <button className="button" type="button" onClick={addHandler}>Add</button>}
-        {note.id && !isEdit && <button className="button" type="button" onClick={editHandler}>Edit</button>}
-        {note.id && isEdit && <button className="button" type="button" onClick={updateHandler}>Update</button>}
-        {note.id && !isEdit && <button className="button" type="button" onClick={deleteHandler}>delete</button>}
+            {note.id && isDisabled && <button className="button btn-right" type="button" onClick={addNewHandler}>Add New</button>}
 
+            <label className="note-label">Title</label>
+            <input
+                placeholder="Enter title"
+                value={note.title}
+                disabled={isDisabled}
+                required
+                name="title"
+                onChange={changeHandler}
+                className="input-text"
+            />
+            <label className="note-label">body</label>
+            <textarea
+                placeholder="Enter body"
+                value={note.body}
+                disabled={isDisabled}
+                name="body"
+                required
+                onChange={changeHandler}
+                className="input-area"
+            />
+            {!note.id && <button className="button" type="button" onClick={addHandler} disabled={!note.title && !note.body}>Add</button>}
+            {note.id && !isEdit && <button className="button" type="button" onClick={editHandler}>Edit</button>}
+            {note.id && isEdit && <button className="button" type="button" onClick={updateHandler}>Update</button>}
+            {note.id && !isEdit && <button className="button" type="button" onClick={deleteHandler}>delete</button>}
+
+        </div>
     </div>
 }
 export default NoteEditor;

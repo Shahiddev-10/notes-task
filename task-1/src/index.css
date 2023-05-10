@@ -17,3 +17,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.button{
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 0;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #1A1B25;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.button:disabled{
+  cursor: not-allowed;
+}
+.btn-right{
+  margin-left: 70%;
+}

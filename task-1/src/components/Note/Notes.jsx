@@ -7,9 +7,9 @@ const Note = ({ note }) => {
     const dispatch = useDispatch();
 
     return id && <div className="note">
-        <h3>{title}</h3>
-        <p>{body}</p>
-        <button type="button" onClick={() => dispatch(setCurrentNote({ id }))}>view</button>
+        <h3 className="title">{title}</h3>
+        <p className="body">{body}</p>
+        <button type="button" className="button" onClick={() => dispatch(setCurrentNote({ id }))}>View</button>
     </div>
 }
 export default Note;

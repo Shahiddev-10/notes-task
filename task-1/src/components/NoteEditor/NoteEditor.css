@@ -1,0 +1,34 @@
+.note-form{
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 5px solid #6874e8;
+    height: auto;
+    margin: 1rem;
+}
+.note-label{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.input-text,
+.input-area{
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 0;
+    border-bottom: 5px solid #6874e8;
+    background-color: #bfc6ff;
+    padding: 1rem 1rem;
+    color: #000;
+    font-size: 1rem;
+    min-width: 300px;
+    outline: none;
+}
+.input-text:disabled,
+.input-area:disabled{
+    cursor: not-allowed;
+}
+@media screen and  (max-width: 768px){
+    .input-text,
+.input-area{
+    width: auto;
+}
+}

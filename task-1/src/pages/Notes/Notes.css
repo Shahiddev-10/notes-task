@@ -1,8 +1,9 @@
 .notes-main{
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     padding: 2rem;
     background-color: #E8F0FF;
+    gap: 2rem;
 }
 .notes-lists{
     width: 40%;
@@ -11,5 +12,26 @@
     width: 60%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
+    margin-top: 2rem;
+}
+
+@media screen and  (max-width: 1024px){
+    .notes-lists{
+        width: 50%;
+    }
+    .note-editor{
+        width: 50%;
+    }
+}
+@media screen and  (max-width: 425px){
+    .notes-lists{
+        width: 100%;
+    }
+    .note-editor{
+        width: 100%;
+    }
+    .notes-main{
+        flex-direction: column-reverse;
+    }   
 }
