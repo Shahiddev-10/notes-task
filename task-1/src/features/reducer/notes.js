@@ -1,16 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid';
 
+const notes = JSON.parse(localStorage.getItem("notes"))
+const list = notes?.length > 0 ? notes : [];
+
 export const notesSlice = createSlice({
     name: 'notes',
     initialState: {
-        list: [{
-            id: uuidv4(),
-            title: "Initial Note",
-            body: "This Might be changed later",
-            dateCreated: new Date(),
-            dateModified: null,
-        }],
+        list,
         currentNote: {}
     },
     reducers: {
@@ -22,7 +19,8 @@ export const notesSlice = createSlice({
                 dateCreated: new Date(),
                 dateModified: null,
             }
-            state.list.push(note)
+            state.list.push(note);
+            localStorage.setItem("notes", JSON.stringify(state.list))
         },
         updateNote: (state, action) => {
             const idx = state.list.findIndex(note => note.id === action.payload.id);
@@ -31,10 +29,12 @@ export const notesSlice = createSlice({
             note.body = action.payload.body;
             note.dateModified = new Date();
             state.list[idx] = note;
+            localStorage.setItem("notes", JSON.stringify(state.list))
         },
         deleteNote: (state, action) => {
             const notes = state.list.filter(note => note.id !== action.payload.id);
-            state.list = notes
+            state.list = notes;
+            localStorage.setItem("notes", JSON.stringify(state.list))
         },
         setCurrentNote: (state, action) => {
             const list = state.list

@@ -4,6 +4,7 @@
     border: 5px solid #6874e8;
     height: auto;
     margin: 1rem;
+    box-shadow: 0 100px 80px #2b467412,0 41.7776px 33.4221px #2b46740d,0 22.3363px 17.869px rgba(43,70,116,.042),0 12.5216px 10.0172px rgba(43,70,116,.035),0 6.6501px 5.32008px rgba(43,70,116,.028),0 2.76726px 2.21381px #2b467405;;
 }
 .note-label{
     display: block;

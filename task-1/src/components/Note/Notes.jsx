@@ -9,7 +9,13 @@ const Note = ({ note }) => {
     return id && <div className="note">
         <h3 className="title">{title}</h3>
         <p className="body">{body}</p>
-        <button type="button" className="button" onClick={() => dispatch(setCurrentNote({ id }))}>View</button>
+        <button
+            type="button"
+            className="button"
+            onClick={() => dispatch(setCurrentNote({ id }))}
+        >
+            View
+        </button>
     </div>
 }
 export default Note;
