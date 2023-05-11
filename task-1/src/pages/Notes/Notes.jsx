@@ -5,7 +5,7 @@ import "./Notes.css"
 const Notes = () => {
     return <div className="notes-main">
         <div className="notes-lists">
-            <NotesList/>
+            <NotesList />
         </div>
         <div className="note-editor">
             <NoteEditor />

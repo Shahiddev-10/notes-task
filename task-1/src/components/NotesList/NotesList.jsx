@@ -90,6 +90,8 @@ const NotesList = () => {
             >
                 Reset
             </button>}
+        </div>
+        <div className="filter-box">
             <select className="select-filter" onChange={e => setFilter(e.target.value)}>
                 <option value="title">Order by Title</option>
                 <option value="dateCreated">Order by Date Created</option>

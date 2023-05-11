@@ -1,12 +1,14 @@
-.note{
+.note {
     background-color: #E8F0FF;
     padding: 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
 }
-.title{
+
+.title {
     margin: 0.2rem;
 }
-.body{
+
+.body {
     margin: 0.2rem 0.2rem 0.5rem;
 }

@@ -50,7 +50,7 @@ const NoteEditor = () => {
         setNote({ ...note, [e.target.name]: e.target.value })
     }
 
-    return <div>
+    return <div className="form-container">
         <div className="note-form">
 
             {note.id && isDisabled && <button className="button btn-right" type="button" onClick={addNewHandler}>Add New</button>}

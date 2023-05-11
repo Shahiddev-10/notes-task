@@ -1,14 +1,16 @@
-.notes-main{
+.notes-main {
     display: flex;
     min-height: 100vh;
     padding: 2rem;
     background-color: #E8F0FF;
     gap: 2rem;
 }
-.notes-lists{
+
+.notes-lists {
     width: 40%;
 }
-.note-editor{
+
+.note-editor {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -16,22 +18,27 @@
     margin-top: 2rem;
 }
 
-@media screen and  (max-width: 1024px){
-    .notes-lists{
+@media screen and (max-width: 1024px) {
+    .notes-lists {
         width: 50%;
     }
-    .note-editor{
+
+    .note-editor {
         width: 50%;
     }
 }
-@media screen and  (max-width: 425px){
-    .notes-lists{
+
+@media screen and (max-width: 768px) {
+    .notes-lists {
         width: 100%;
     }
-    .note-editor{
+
+    .note-editor {
         width: 100%;
     }
-    .notes-main{
+
+    .notes-main {
         flex-direction: column-reverse;
-    }   
+        padding: 1rem;
+    }
 }
